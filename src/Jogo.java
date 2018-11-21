@@ -4,24 +4,28 @@ public class Jogo {
         public static Jogador[] InstanciaJogadores(String[] idJ){
 
             int i=1;
-            Jogador[] arrayDeJogadores = new  Jogador[(idJ.length+1)];
+            Jogador[] arrayDeJogadores = new  Jogador[5];
 
-            while (i<arrayDeJogadores.length){
-                switch (idJ[i-1]){
+            while (i<arrayDeJogadores.length && i-1<idJ.length) {
+                switch (idJ[i - 1]) {
+
                     case "1": {
-                        arrayDeJogadores[i]= new Frederico() ;
+                        arrayDeJogadores[Integer.parseInt(idJ[i - 1])] = new Frederico();
                         break;
                     }
                     case "2": {
-                        arrayDeJogadores[i]= new Carlos();
+                        arrayDeJogadores[Integer.parseInt(idJ[i - 1])] = new Carlos();
                         break;
                     }
                     case "3": {
-                        arrayDeJogadores[i]= new Rosa();
+                        arrayDeJogadores[Integer.parseInt(idJ[i - 1])] = new Rosa();
                         break;
                     }
                     case "4": {
-                        arrayDeJogadores[i]= new Bruno();
+                        arrayDeJogadores[Integer.parseInt(idJ[i - 1])] = new Bruno();
+                        break;
+                    }
+                    default: {
                         break;
                     }
                 }
@@ -29,7 +33,7 @@ public class Jogo {
             }
             return arrayDeJogadores;
         }
-        public static Carta retornaCarta (String[] carta ){
+      /*  public static Carta retornaCarta (String[] carta ){
             Carta temp = new Carta(carta[0],carta[1],Integer.valueOf(carta[2]),Integer.valueOf(carta[3]),Integer.valueOf(carta[4]),Integer.valueOf(carta[5]),Integer.valueOf(carta[6]));
             return temp;
         }
@@ -42,22 +46,19 @@ public class Jogo {
             }
             return baralhoTemp;
         }
+            */
+        public static void retornaJogadoresComBaralho (Jogador[] jds, String[] idJogadores, int tBaralho){
 
-        public static Jogador[] retornaJogadoresComBaralho (Jogador[] jds, int tBaralho){
-            for (int i =1;i<jds.length;i++){
-                jds[i].setBaralho(retornaBaralho(tBaralho));
+            for (int i =0;i<idJogadores.length;i++){
+                jds[Integer.parseInt(idJogadores[i])].setBaralho(tBaralho);
             }
-            return jds;
+
         }
         public static int SimulaJogo (Jogador player1, Jogador player2){
             int player1Pontos=20;
             int player2Pontos=20;
-            int RemovePontos (int player, int pontos){
-                return player-pontos;
-            }
-           public  int VerificaEfeito(Carta[] player){
-                campo
-            }
+
+
             return 1;
         }
 
@@ -66,23 +67,38 @@ public class Jogo {
         String linha = input.nextLine();
         String[] idJogadores = linha.split(" ");
         Jogador[] arrayDejogadores = InstanciaJogadores(idJogadores);
-        for (int i =1;i<arrayDejogadores.length;i++){
-           String test = arrayDejogadores[i].Nome();
-           System.out.println(test);
-        }
+
+
 
         int rodadas= Integer.valueOf(input.nextLine());
+
         int tamanhoBaralho = Integer.valueOf(input.nextLine());
-        arrayDejogadores=retornaJogadoresComBaralho(arrayDejogadores,tamanhoBaralho);
-        String[] idSimulacao = linha.split(" ");
+
+        retornaJogadoresComBaralho(arrayDejogadores,idJogadores,tamanhoBaralho);
+
+        for (int i=0;i<arrayDejogadores.length;i++) {
+
+            try {
+                System.out.println(arrayDejogadores[i].Nome());
+                System.out.println(arrayDejogadores[i].getCarta().nome);
+                System.out.println(arrayDejogadores[i].getCarta().nome);
+                System.out.println(arrayDejogadores[i].getCarta().nome);
+
+            }catch (NullPointerException nu){
+                System.out.println("erro");
+            }
+
+        }
+
+        /*String[] idSimulacao = linha.split(" ");
         Jogador[] jogadorSimulacao = InstanciaJogadores(idSimulacao);
         while (input.nextLine().compareTo("fim")!=0){
             input.nextLine().split(" ");
         }
         SimulaJogo(jogadorSimulacao[0],jogadorSimulacao[1]);
 
-        System.out.println(arrayDejogadores[1].getCarta());
-        for (int i =0;i<tamanhoBaralho;i++){
+        System.out.println(arrayDejogadores[2].getCarta());
+       /* for (int i =0;i<tamanhoBaralho;i++){
             int j =1;
             Carta[] test = arrayDejogadores[j].getBaralho();
             System.out.println(arrayDejogadores[j].Nome());
@@ -93,6 +109,6 @@ public class Jogo {
             System.out.println(test[i].custo);
             System.out.println(test[i].efeito);
             System.out.println(test[i].idCarta);
-        }
+        }*/
     }
 }

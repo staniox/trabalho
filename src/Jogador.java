@@ -1,10 +1,10 @@
 public interface Jogador {
-    Carta retornaCarta (String[] carta );
-    void setBaralho(Carta[] baralho);
-    Carta[] getBaralho();
+
+    void setBaralho(int tamanhoBaralho);
+
     Carta getCarta();
 
-    Carta jogada(Carta[] m);
+
 
     String Nome();
 }

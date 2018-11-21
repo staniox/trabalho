@@ -1,0 +1,14 @@
+1 2 3
+2
+3
+Kote,Somente um bardo ?,15,15,10,0,12
+Camponˆes,Um pobre camponˆes perdido,1,1,1,0,13
+Guarda, Um guarda de uma vila qualquer,2,2,2,1,14
+Sumo Sacerdote de ishtar,Um sumo Sacerdote ac´adio,15,15,10,0,15
+Agricultor de trigo, ???? o que estou fazendo aqui ?,0,1,1,1,16
+Guarda do pal´acio, S´o um guarda qualquer,2,2,2,1,327
+Rei Sapo,um sapo,15,15,10,0,209
+Guarda do rei sapo,Toda lealdade ao rei,0,1,1,1,409
+Her´oi sapo,Um velho her´oi do reino dos sapos,2,2,2,1,500
+1 2
+fim

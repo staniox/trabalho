@@ -76,7 +76,7 @@ public class Jogo {
 
         retornaJogadoresComBaralho(arrayDejogadores,idJogadores,tamanhoBaralho);
 
-        for (int i=0;i<arrayDejogadores.length;i++) {
+        for (int i=1;i<arrayDejogadores.length;i++) {
 
             try {
                 System.out.println(arrayDejogadores[i].Nome());

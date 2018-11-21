@@ -16,6 +16,9 @@ public class Carlos implements Jogador {
 
         for (int i = 0 ;i<tamanhoBaralho;i++){
             String[] temp =input.nextLine().split("," );
+            for (int j=0;j<temp.length;j++){
+                System.out.println("tempCarlos "+j+temp[j]);
+            }
             fila.add(retornaCarta(temp));
 
         }

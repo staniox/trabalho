@@ -16,7 +16,7 @@ public class Frederico implements Jogador{
 
         for (int i = 0 ;i<tamanhoBaralho;i++){
 
-            stack.push(retornaCarta(input.nextLine().split("," )));
+            System.out.println(stack.push(retornaCarta(input.nextLine().split("," ))));
 
         }
 

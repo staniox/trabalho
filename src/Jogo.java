@@ -66,6 +66,9 @@ public class Jogo {
 
         String linha = input.nextLine();
         String[] idJogadores = linha.split(" ");
+        for (int i=0;i<idJogadores.length;i++){
+            System.out.println("idJogadores "+idJogadores[i]);
+        }
         Jogador[] arrayDejogadores = InstanciaJogadores(idJogadores);
 
 

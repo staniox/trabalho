@@ -1,5 +1,6 @@
 import java.util.*;
 import java.util.Comparator;
+import java.util.PriorityQueue;
 
 public class Rosa implements Jogador{
     PriorityQueue<Carta> heap = new PriorityQueue<>(new Comparador());
@@ -34,12 +35,18 @@ public class Rosa implements Jogador{
 
     public void setBaralho(int tamanhoBaralho) {
         Scanner input= new Scanner(System.in);
-
+        String[] temp =new String[7];
         for (int i = 0 ;i<tamanhoBaralho;i++){
-            String[] temp =input.nextLine().split("," );
-            for (int j=0;j<temp.length;j++){
-                System.out.println("tempRosa "+temp[j]);
-            }
+
+
+
+
+                temp = input.nextLine().split(",");
+
+
+
+                System.out.println("tempRosa "+temp.length);
+
             heap.add(retornaCarta(temp));
 
         }
